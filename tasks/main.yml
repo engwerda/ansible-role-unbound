@@ -33,7 +33,7 @@
 - name: configure unbound zones
   template: 
      src=10zone.conf.j2
-     dest="/etc/unbound/conf.d/10{{item.name}}.conf"
+     dest="/etc/unbound/conf.d/10{{item.value.name}}.conf"
   with_items: unbound_zones
   notify: restart unbound
   tags: ["configuration","unbound"]
